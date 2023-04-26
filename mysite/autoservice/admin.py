@@ -5,20 +5,26 @@ from .models import (VehicleModel,
                      Order,
                      OrderLine)
 
+
 class OrderLineInline(admin.TabularInline):
     model = OrderLine
     extra = 0
 
+
 class VehicleAdmin(admin.ModelAdmin):
     list_display = ['vehicle_model', 'owner_name', 'plate', 'vin']
     list_filter = ['owner_name', 'vehicle_model__make', 'vehicle_model__model']
+    search_fields = ['plate', 'vin', 'vehicle_model__make', 'vehicle_model__model']
+
 
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ['name', 'price']
 
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['vehicle', 'date']
     inlines = [OrderLineInline]
+
 
 # Register your models here.
 admin.site.register(VehicleModel)
