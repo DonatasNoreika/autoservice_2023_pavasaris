@@ -13,13 +13,16 @@ class VehicleAdmin(admin.ModelAdmin):
     list_display = ['vehicle_model', 'owner_name', 'plate', 'vin']
 
 
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ['name', 'price']
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['vehicle', 'date']
     inlines = [OrderLineInline]
 
 # Register your models here.
 admin.site.register(VehicleModel)
-admin.site.register(Service)
+admin.site.register(Service, ServiceAdmin)
 admin.site.register(Vehicle, VehicleAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(OrderLine)
