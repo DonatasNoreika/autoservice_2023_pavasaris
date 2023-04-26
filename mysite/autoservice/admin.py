@@ -11,7 +11,7 @@ class OrderLineInline(admin.TabularInline):
 
 class VehicleAdmin(admin.ModelAdmin):
     list_display = ['vehicle_model', 'owner_name', 'plate', 'vin']
-
+    list_filter = ['owner_name', 'vehicle_model__make', 'vehicle_model__model']
 
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ['name', 'price']
