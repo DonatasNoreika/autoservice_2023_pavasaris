@@ -5,8 +5,13 @@ from .models import (VehicleModel,
                      Order,
                      OrderLine)
 
+class OrderLineInline(admin.TabularInline):
+    model = OrderLine
+    extra = 0
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['vehicle', 'date']
+    inlines = [OrderLineInline]
 
 # Register your models here.
 admin.site.register(VehicleModel)
