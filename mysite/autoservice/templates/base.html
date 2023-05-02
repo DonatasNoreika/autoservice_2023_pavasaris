@@ -30,6 +30,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'index' %}">Pradžia</a>
                     <a class="nav-link" href="{% url 'vehicles' %}">Automobiliai</a>
+                    <a class="nav-link" href="{% url 'orders' %}">Užsakymai</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link" href="">
@@ -39,8 +40,6 @@
                               clip-rule="evenodd"/>
                     </svg>
                     {{ user.get_username }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="">Mano užsakymai</a></li>
-                <li class="nav-item"><a class="nav-link" href="">Naujas užsakymas</a></li>
                 <li class="nav-item"><a class="nav-link" href="">Atsijungti</a></li>
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="">Prisijungti</a></li>
