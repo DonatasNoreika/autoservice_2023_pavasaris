@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Pradžia{% endblock %}
+
+{% block content %}
+<h1>Automobiliai:</h1>
+<br>
+{% for vehicle in vehicles %}
+<p>{{ vehicle }}</p>
+<hr>
+{% endfor %}
+{% endblock %}
