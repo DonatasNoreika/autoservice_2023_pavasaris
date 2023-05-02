@@ -6,7 +6,9 @@
 <h1>Užsakymai:</h1>
 <br>
 {% for order in orders %}
-<p>{{ order }}</p>
+<a href="{{ order.pk }}">
+    <p>{{ order }}</p>
+</a>
 <hr>
 {% endfor %}
 {% endblock %}
