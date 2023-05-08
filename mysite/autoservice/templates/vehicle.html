@@ -18,4 +18,5 @@
 <p><strong>VIN kodas: </strong>{{ vehicle.vin }}</p>
 <p><strong>Valstybinis numeris: </strong>{{ vehicle.plate }}</p>
 <hr>
+<p>{{ vehicle.description | safe }}</p>
 {% endblock %}
