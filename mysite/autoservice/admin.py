@@ -22,8 +22,9 @@ class ServiceAdmin(admin.ModelAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['vehicle', 'date']
+    list_display = ['vehicle', 'date', 'client', 'deadline']
     inlines = [OrderLineInline]
+    list_editable = ['client', 'deadline']
 
 
 # Register your models here.
