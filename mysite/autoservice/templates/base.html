@@ -29,7 +29,11 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'index' %}">Pradžia</a>
+                </li>
+                <li>
                     <a class="nav-link" href="{% url 'vehicles' %}">Automobiliai</a>
+                </li>
+                <li>
                     <a class="nav-link" href="{% url 'orders' %}">Užsakymai</a>
                 </li>
                 {% if user.is_authenticated %}
