@@ -22,7 +22,7 @@ class ServiceAdmin(admin.ModelAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['vehicle', 'date', 'client', 'deadline']
+    list_display = ['vehicle', 'date', 'client', 'deadline', 'deadline_overdue']
     inlines = [OrderLineInline]
     list_editable = ['client', 'deadline']
 
