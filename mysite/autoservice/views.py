@@ -7,7 +7,8 @@ from django.db.models import Q
 
 def search(request):
     query = request.GET.get('query')
-    search_results = Vehicle.objects.filter(Q(plate__icontains=query) | Q(vin__icontains=query) | Q(owner_name__icontains=query) | Q(vehicle_model__make__icontains=query) | Q(vehicle_model__model__icontains=query))
+    search_results = Vehicle.objects.filter(
+        Q(plate__icontains=query) | Q(vin__icontains=query) | Q(owner_name__icontains=query) | Q(vehicle_model__make__icontains=query) | Q(vehicle_model__model__icontains=query))
     return render(request, 'search.html', {'vehicles': search_results, 'query': query})
 
 
@@ -52,3 +53,12 @@ class OrderDetailView(generic.DetailView):
     model = Order
     template_name = 'order.html'
     context_object_name = 'order'
+
+
+class MyOrderListView(generic.ListView):
+    model = Order
+    template_name = 'my_orders.html'
+    context_object_name = 'orders'
+
+    def get_queryset(self):
+        return Order.objects.filter(client=self.request.user)
