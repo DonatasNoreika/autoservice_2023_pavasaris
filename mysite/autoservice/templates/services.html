@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block "title" %}Paslaugos{% endblock %}
+
+{% block "content" %}
+<h1>Paslaugos:</h1>
+<br>
+{% for service in services %}
+<p><a href="#">{{ service }}</a></p>
+<hr>
+{% endfor %}
+{% endblock %}

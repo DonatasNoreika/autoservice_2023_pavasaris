@@ -228,3 +228,9 @@ class OrderLineDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.Delet
 
     def get_success_url(self):
         return reverse('order', kwargs={'pk': self.kwargs['order_id']})
+
+
+class ServiceListView(generic.ListView):
+    model = Service
+    context_object_name = 'services'
+    template_name = 'services.html'
