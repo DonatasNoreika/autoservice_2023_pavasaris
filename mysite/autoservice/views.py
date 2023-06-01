@@ -234,3 +234,10 @@ class ServiceListView(generic.ListView):
     model = Service
     context_object_name = 'services'
     template_name = 'services.html'
+
+
+class ServiceCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Service
+    fields = ['name', 'price']
+    template_name = 'service_form.html'
+    success_url = "/autoservice/services/"

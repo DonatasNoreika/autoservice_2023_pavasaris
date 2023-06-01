@@ -4,9 +4,13 @@
 
 {% block "content" %}
 <h1>Paslaugos:</h1>
+<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'service_new' %}">Pridėti paslaugą</a>
+<br>
 <br>
 {% for service in services %}
 <p><a href="#">{{ service }}</a></p>
 <hr>
 {% endfor %}
+
+
 {% endblock %}
